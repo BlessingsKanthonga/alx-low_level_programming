@@ -2,7 +2,7 @@
 
 /**
  * main - Prints some line
- * @parameterx: Takes no parameters
+ * void: Takes no parameters
  * Return: 0
  */
 
