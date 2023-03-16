@@ -1,7 +1,9 @@
 #include <stdio.h>
 
 /**
- * function main prints a statement for the puts file 
+ * main - Prints some line
+ * @parameterx: Takes no parameters
+ * Return: 0
  */
 
 int main(void)
