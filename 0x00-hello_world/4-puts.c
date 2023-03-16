@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/* function main prints a statement for the puts file */
+/** function main prints a statement for the puts file */
 
 int main(void)
 {
