@@ -3,7 +3,7 @@
 /**
  * main - prints numbers using putchar
  * void: takes no parameters
- * return: 0
+ * Return: 0
  */
 
 int main(void)
