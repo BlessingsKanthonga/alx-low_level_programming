@@ -3,7 +3,7 @@
 /**
  * main - print alphabet without q and e
  * No parameters for function main
- * returns 0
+ * Return: 0
  */
 
 int main(void)
