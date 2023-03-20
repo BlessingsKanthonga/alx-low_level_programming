@@ -18,7 +18,6 @@ int main(void)
 
 	while (number < 8)
 	{
-
 		while (number2 < 9)
 		{
 			while (number3 < 10)
@@ -26,12 +25,10 @@ int main(void)
 				putchar('0' + number);
 				putchar('0' + number2);
 				putchar('0' + number3);
-
 				if ((number == 7) && (number2 == 8) && (number3 == 9))
 				{
 					break;
 				}
-
 				putchar(',');
 				putchar(' ');
 				number3++;
@@ -40,7 +37,6 @@ int main(void)
 			number3 = counter3;
 			number2++;
 		}
-
 		if ((number2 > 8) && (number3 > 9))
 		{
 			count2++;
@@ -55,11 +51,8 @@ int main(void)
 			counter2++;
 			number2 = counter2;
 		}
-
 		number++;
-
 	}
-	
 	putchar('\n');
 	return (0);
 }
