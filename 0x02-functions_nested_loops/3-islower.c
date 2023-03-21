@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- * islower - checks if character is lowercase
- * int c: takes one parameter of type int
+ * _islower - checks if character is lowercase
+ * int: takes one parameter of type int
+ * c: parameter for taking inputs
  * Return: 1 if character is lowercase else 0
  */
 
@@ -10,7 +11,7 @@ int _islower(int c)
 {
 	int letter;
 	int check;
-	
+
 	for (letter = 'a'; letter <= 'z'; letter++)
 	{
 		if (c == letter)
