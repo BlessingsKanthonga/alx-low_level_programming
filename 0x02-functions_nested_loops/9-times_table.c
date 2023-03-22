@@ -18,6 +18,10 @@ void times_table(void)
 		{
 			temp = number * number2;
 			
+			if ((temp < 10) && (number2 > 0))
+			{
+				_putchar(' ');
+			}
 			if (temp > 9)
 			{
 				_putchar('0' + (temp / 10));
