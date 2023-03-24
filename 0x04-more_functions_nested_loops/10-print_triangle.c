@@ -28,6 +28,7 @@ void print_triangle(int size)
 			{
 				number3 = number5;
 				number4 = 1;
+
 				while (number3 > 1)
 				{
 					_putchar(' ');
