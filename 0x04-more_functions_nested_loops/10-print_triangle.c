@@ -14,7 +14,7 @@ void print_triangle(int size)
 	int number4;
 	int number3;
 
-	for (number = size; number > 0; number--)
+	for (number = size; number >= 0; number--)
 	{
 		if ((size == 0) || (size < 0))
 		{
@@ -27,13 +27,13 @@ void print_triangle(int size)
 			while (number6 <= size)
 			{
 				number3 = number5;
-				number4 = number6;
-				while (number3 > 0)
+				number4 = 1;
+				while (number3 > 1)
 				{
 					_putchar(' ');
 					number3--;
 				}
-				while (number4 <= size)
+				while (number4 <= number6)
 				{
 					_putchar(35);
 					number4++;
