@@ -2,7 +2,8 @@
 
 /**
  * reset_to_98 - takes a pointer to an int as parameter and updates the value
- * @*n: pointer input substitute
+ * int *: takes pointer to an integer
+ * @n: pointer input substitute
  * Return: void
  */
 
