@@ -13,6 +13,9 @@ void print_array(int *a, int n)
 {
 	int counter;
 
+	if (n < 0)
+		n *= -1;
+
 	for (counter = 0; counter < n; counter++)
 	{
 		if (a[counter] == '\0')
