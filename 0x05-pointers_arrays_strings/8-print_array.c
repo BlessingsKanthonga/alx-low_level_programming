@@ -15,6 +15,8 @@ void print_array(int *a, int n)
 
 	for (counter = 0; counter < n; counter++)
 	{
+		if (a[counter] == '\0')
+			break;
 		if (counter != (n - 1))
 		{
 			printf("%d, ", a[counter]);
