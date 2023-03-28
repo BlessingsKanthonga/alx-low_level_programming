@@ -14,11 +14,11 @@ void puts2(char *str)
 
 	while (check != '\0')
 	{
-		if (count % 2 == 0)
+		if ((count % 2 == 0) && str[count] != '\0')
 			_putchar(str[count]);
 		if (str[count] == '\0')
 			check = '\0';
-		count ++;
+		count++;
 	}
 	_putchar('\n');
 }
