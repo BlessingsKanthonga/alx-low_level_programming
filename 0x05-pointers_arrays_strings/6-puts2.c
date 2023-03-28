@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts2 - prints every other character 
+ * puts2 - prints every other character
  * char \*: integer pointer as input
  * @str: sub for input
  * Return: void
@@ -14,11 +14,11 @@ void puts2(char *str)
 
 	while (check != '\0')
 	{
-		if (str[count] != '\0')
+		if (count % 2 == 0)
 			_putchar(str[count]);
-		else
+		if (str[count] == '\0')
 			check = '\0';
-		count += 2;
+		count ++;
 	}
 	_putchar('\n');
 }
