@@ -26,6 +26,9 @@ char *_strcat(char *dest, char *src)
 				count++;
 			}
 			check = '\0';
+
+			if (src[count2] == '\0')
+				dest[count] = src[count2];
 		}
 		else
 			count++;
