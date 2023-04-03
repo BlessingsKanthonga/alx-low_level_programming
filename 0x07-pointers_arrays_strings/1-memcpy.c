@@ -5,6 +5,7 @@
  * @dest: destination
  * @src: source
  * @n: size of vopied bytes
+ * Return: copied string
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
