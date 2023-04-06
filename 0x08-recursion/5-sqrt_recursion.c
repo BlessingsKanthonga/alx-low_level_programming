@@ -15,7 +15,7 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * sqrt - calculates square root square root for _sqrt_recursion
+ * find_sqrt - calculates square root square root for _sqrt_recursion
  * @n: square rooting number
  * @x: starting point for sqiaring
  * Return: square root to _sqrt_recursion or -1
