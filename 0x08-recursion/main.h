@@ -10,5 +10,6 @@ int _pow_recursion(int, int);
 int _sqrt_recursion(int);
 int is_prime_number(int);
 int calculate_prime(int, int);
+int find_sqrt(int, int);
 
 #endif /* MAIN_H */
