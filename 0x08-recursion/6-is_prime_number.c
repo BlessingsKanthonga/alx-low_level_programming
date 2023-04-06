@@ -14,6 +14,13 @@ int is_prime_number(int n)
 		return (calculate_prime(n, 2));
 }
 
+/**
+ * calculate_prime - calculates prime by adding extra parameter
+ * @n: prime or not
+ * @x: startin point for checking primeness of n
+ * Return: returns 1 go calling fn if prime 0 if not
+ */
+
 int calculate_prime(int n, int x)
 {
 	if (n == x)
