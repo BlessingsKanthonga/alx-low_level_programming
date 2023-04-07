@@ -4,7 +4,7 @@
 /**
  * main - prints program name
  * @argc: count of arguments
- * @argv: array of arguments
+ * @argv[]: array of arguments
  * Return: 1 if success else 0 if errors
  */
 
