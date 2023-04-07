@@ -7,7 +7,7 @@
  * Return: 1 if success else 0 if errors
  */
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	if (argc > 0)
 		printf("%s\n", argv[0]);
