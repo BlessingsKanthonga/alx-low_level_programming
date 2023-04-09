@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	int result = 0;
 	int coin[] = {25, 10, 5, 2, 1};
 
-	if ((argv[1] == NULL) || (argc > 2))
+	if (argc != 2)
 	{
 		printf("ERROR\n");
 		return (1);
