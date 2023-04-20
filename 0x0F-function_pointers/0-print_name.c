@@ -7,7 +7,7 @@
  * @f: function pointer to do the printing
  */
 
-void print_name(char *name, void (*f)(char *))
+void print_name(char *name, void (*f)(char *c))
 {
 	if ((name == NULL) || (f == NULL))
 		exit(98);
