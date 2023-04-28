@@ -1,117 +1,76 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include <stdarg.h>
-#include "variadic_functions.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * print_all - print various data typez
+ * print_all - prints various types of input
  * @format: data types
- * @...: data
- * Return: vojd
+ * @...: variables
  */
 
-void print_all(const char * const format, ...)
+void print_all(const char * const format, ...) 
 {
-	int count = 0;
-	int counter = 0;
-	int counter2 = 0;
-	char *str;
 	va_list args;
+	char c;
+	char *s;
+    	int i;
+	float f;
+	int count = 0;
+	const char *p = format;
 
-	while (format[counter] != NULL)
-	{
-		switch (format[counter])
-		{
-			case 'c':
-				count++;
-			case 'i':
-				count++;
-			case 'f':
-				count++;
-			case 's':
-				count++;
-			default:
-				continue;
-		}
-		counter++;
-	}
-	va_start(args, format[count]);
+	while (format[count] != '\0')
+		count++;
+	va_start(args, format);
 
-	while (count > 0)
+	while (*p)
 	{
-		switch (format[counter2])
+		switch (*p) 
 		{
 			case 'c':
 				{
-					printf(", %s", va_arg(args, char));
-					counter2++;
+					c = va_arg(args, int);
+
+					printf("%c", c);
 					break;
 				}
 			case 'i':
 				{
-					printf(", %d", va_arg(args, int));
-					counter2++;
+					i = va_arg(args, int);
+
+					printf("%d", i);
 					break;
 				}
 			case 'f':
 				{
-					printf(", %f", va_arg(args, float));
-					counter2++;
+					f = va_arg(args, double);
+
+					printf("%f", f);
 					break;
 				}
 			case 's':
 				{
-					str = va_arg(args, char *);
+					s = va_arg(args, char *);
 
-					if (str == NULL)
+					if (s == NULL)
 					{
 						printf("(nil)");
-						counter2++;
 						break;
 					}
-					printf("%s, ", str);
-					counter2++;
+					printf("%s", s);
 					break;
 				}
 			default:
 				{
-					counter2++;
-					continue;
-				}
-		}
-
-	switch (format[counter2])
-	{
-		case 'c':
-			{
-				printf("%c", va_arg(args, char));
-				break;
-			}
-		case 'i':
-			{
-				printf("%d", va_arg(args, int));
-				break;
-			}
-		case 'f':
-			{
-				print("%f", va_arg(args, float));
-				break;
-			}
-		case 's':
-			{
-				str = va_arg(args, char *);
-
-				if (str == NULL)
-				{
-					printf("%s", str);
 					break;
 				}
-				printf("%s", str);
-				break;
-			}
-		default:
-			continue;
+		}
+		p++;
+		count--;
+
+		if ((count > 0) && ((*p == 'c') || (*p == 's') || (*p == 'f') || (*p == 'i')))
+			printf(", ");
 	}
+
 	va_end(args);
 	printf("\n");
 }
