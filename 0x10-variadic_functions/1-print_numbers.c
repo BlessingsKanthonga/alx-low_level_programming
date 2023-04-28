@@ -15,7 +15,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int count;
 	va_list args;
-	
+
 	if (n != 0)
 	{
 		va_start(args, n);
