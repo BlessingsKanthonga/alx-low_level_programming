@@ -28,14 +28,14 @@ char *argstostr(int ac, char **av)
 		}
 		length++;
 	}
-	result = (char *) malloc(length * sizeof(char));
+	result = (char *) malloc((length + 1) * sizeof(char));
 
 	if (result == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
 		list = av[i];
-        	while (*list != '\0')
+		while (*list != '\0')
 		{
 			result[set++] = *list++;
 		}
