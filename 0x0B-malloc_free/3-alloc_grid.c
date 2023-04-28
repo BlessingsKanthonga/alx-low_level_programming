@@ -1,33 +1,34 @@
+#include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
- * alloc_grid - 2d arfay sgoring
- * @width: width
- * @height: height
- * Return: poi ter go brid or null
+ * alloc_grid - returns pointer to 2d array
+ * @width: 1st dimension
+ * @height: 2nd dimension
+ * Return: pointer to array or NULL if h or w is <= 0
  */
 
 int **alloc_grid(int width, int height)
 {
-	int count;
-	int count2;
-	int count3;
-	int **array;
+	int **grid = (int **) malloc(height * sizeof(int *));
+	int i;
+	int j;
 
-	if ((height == 0) || (width == 0))
+	if ((width <= 0) || (height <= 0))
 		return (NULL);
-	if (( height < 0) || (width < 0))
+	if (grid == NULL)
 		return (NULL);
-	array = (int **) malloc(sizeof(int) * height);
-
-	if (array == NULL)
-		return (NULL);
-	for (count = 0; count < height; count++)
-		array[count] = (int *) malloc(sizeof(int) * width);
-	for (count2 = 0; count2 < height; count2++)
+	for (i = 0; i < height; i++) 
 	{
-		for (count3 = 0; count3 < width; count3++)
-			array[count2][count3] = 0;
+		grid[i] = (int *) malloc(width * sizeof(int));
+		if (grid[i] == NULL) 
+		{
+			for (j = 0; j < i; j++)
+				free(grid[j]);
+			free(grid);
+			return (NULL);
+		}
 	}
-	return (array);
+	return (grid);
 }
