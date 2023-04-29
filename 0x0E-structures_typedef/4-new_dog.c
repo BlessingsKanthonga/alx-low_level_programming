@@ -2,46 +2,49 @@
 #include "dog.h"
 
 /**
- * dog_t new_dog - defines new dog
- * @name: of new dog
+ * new_dog - creates new dog instance
+ * @name: of dog
  * @age: of dog
- * @owner: of new dog
- * Return: NULL if fn fails, else 0;
+ * @owner: of dog
+ * Return: instance of new dog
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int count = 0;
-	int count2 = 0;
+	int name_length = 0;
+	int owner_length = 0;
+	int i;
+	dog_t *new_dog;
 
-	dog_t *new_dog = (dog_t *) malloc(sizeof(dog_t));
+	while (name[name_length] != '\0')
+		name_length++;
+
+	while (owner[owner_length] != '\0')
+		owner_length++;
+
+	new_dog = (dog_t *) malloc(sizeof(dog_t));
 
 	if (new_dog == NULL)
 		return (NULL);
-	while (name[count] != '\0')
-		count++;
-	while (owner[count2] != '\0')
-		count2++;
+	(new_dog->name) = (char *) malloc(sizeof(char) * (name_length + 1));
 
-	new_dog -> name = (char *) malloc(count + 1);
-
-	if (new_dog -> name == NULL)
+	if ((new_dog->name) == NULL)
 	{
 		free(new_dog);
 		return (NULL);
 	}
-	new_dog -> name = name;
+	for (i = 0; i <= name_length; i++)
+		(new_dog->name[i]) = name[i];
+	(new_dog->age) = age;
+	(new_dog->owner) = (char *) malloc(sizeof(char) * (owner_length + 1));
 
-	new_dog -> owner = (char *) malloc(count2 + 1);
-
-	if (new_dog -> owner == NULL)
+	if ((new_dog->owner) == NULL)
 	{
-		free(new_dog -> name);
+		free(new_dog->name);
 		free(new_dog);
 		return (NULL);
 	}
-	new_dog -> owner = owner;
-	new_dog -> age = age;
-
+	for (i = 0; i <= owner_length; i++)
+		(new_dog->owner[i]) = owner[i];
 	return (new_dog);
 }
