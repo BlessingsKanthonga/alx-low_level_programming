@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	if ((argv[2][1] != '\0') || (argc != 4))
 	{
 		printf("Error\n");
-		exit(98);
+		exit(99);
 	}
 
 	a = atoi(argv[1]);
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		printf("Error\n");
-		exit(99);
+		exit(98);
 	}
 	return (0);
 }
