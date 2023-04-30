@@ -33,12 +33,13 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-	if ((d == '\0') && ((*c == '+') || (*c == '-') || (*c == '/') || (*c == '%') || (*c == '*')))
+	if (((*c == '+') || (*c == '-') || (*c == '/') || (*c == '%') || (*c == '*'))
+			&& (d == '\0'))
 		printf("%d\n", (*get_op_func(argv[2]))(a, b));
 	else
 	{
 		printf("Error\n");
-		exit(98);
+		exit(99);
 	}
 	return (0);
 }
