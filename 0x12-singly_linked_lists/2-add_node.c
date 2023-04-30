@@ -22,16 +22,16 @@ list_t *add_node(list_t **head, const char *str)
 		free(node);
 		return (NULL);
 	}
-	node -> str = strdup(str);
-	
+	node->str = strdup(str);
+
 	while (str[count] != '\0')
 	{
 		length++;
 		count++;
 	}
 
-	node -> len = length;
-	node -> next = *head;
+	node->len = length;
+	node->next = *head;
 	*head = node;
 	return (node);
 }
