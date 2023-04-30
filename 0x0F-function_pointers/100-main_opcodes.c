@@ -12,7 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int n;
-
+	
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -31,8 +31,8 @@ int main(int argc, char *argv[])
 }
 
 /**
- * print_opcodes - prints opcodes
- * @n: argument for main fn
+ * prints_opcodes - prints opcodes
+ * @n: argument for n
  */
 
 void print_opcodes(int n)
@@ -41,6 +41,8 @@ void print_opcodes(int n)
 	unsigned char *p = (unsigned char *)print_opcodes;
 	
 	for (i = 0; i < n; i++)
-		printf("%02x", *p++);
+	{
+		printf("%02hhx ", *p++);
+	}
 	printf("\n");
 }
