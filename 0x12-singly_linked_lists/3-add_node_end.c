@@ -23,24 +23,24 @@ list_t *add_node_end(list_t **head, const char *str)
 		free(node);
 		return (NULL);
 	}
-	node -> str = strdup(str);
-	node -> next = NULL;
+	node->str = strdup(str);
+	node->next = NULL;
 	while (str[count] != '\0')
 	{
 		length++;
 		count++;
 	}
-	node -> len = length;
+	node->len = length;
 
 	if ((*head) == NULL)
 		(*head) = node;
 	else
 	{
-		while ((last) -> next != NULL)
+		while (last->next != NULL)
 		{
-			last = last -> next;
+			last = last->next;
 		}
-		last -> next = node;
+		last->next = node;
 	}
 	return (node);
 }
