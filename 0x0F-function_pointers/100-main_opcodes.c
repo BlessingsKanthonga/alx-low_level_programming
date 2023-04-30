@@ -1,16 +1,15 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "function_pointers.h"
+#include<stdio.h>
+#include<stdlib.h>
 
 /**
- * main - prints its opcodes
- * @argc: count
- * @argv: arguments
- * Return: 0 if success
+ * main - prints its own opcodes
+ *@argc: the number of parameters.
+ *@argv: the parameeters in the case the number ob bytes.
+ * Return: 0 when successful
  */
-
 int main(int argc, char *argv[])
 {
+	int i;
 	int n;
 	
 	if (argc != 2)
@@ -19,30 +18,21 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	n = atoi(argv[1]);
-	
+
 	if (n < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
-	print_opcodes(n);
-	
-	return (0);
-}
 
-/**
- * prints_opcodes - prints opcodes
- * @n: argument for n
- */
-
-void print_opcodes(int n)
-{
-	int i;
-	unsigned char *p = (unsigned char *)print_opcodes;
-	
 	for (i = 0; i < n; i++)
 	{
-		printf("%02hhx ", *p++);
+		printf("%02hhx", *((char *)main + i));
+
+		if (i < (n - 1))
+			printf(" ");
+		else
+			printf("\n");
 	}
-	printf("\n");
+	return (0);
 }
