@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 {
 	int count = 1;
 	int result = 0;
+	int i = 0;
 
 	if (argc <= 1)
 	{
@@ -22,15 +23,16 @@ int main(int argc, char *argv[])
 	{
 		while (argv[count] != NULL)
 		{
-			if (!(isdigit(*argv[count])))
+			while (argv[count][i] != '\0')
 			{
-				printf("Error\n");
-				return (1);
+				if (!(isdigit(argv[count][i])))
+				{
+					printf("Error\n");
+					return (1);
+				}
+				i++;
 			}
-			else
-			{
-				result += atoi(argv[count]);
-			}
+			result += atoi(argv[count]);
 			count++;
 		}
 		printf("%d\n", result);
