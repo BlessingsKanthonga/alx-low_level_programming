@@ -1,51 +1,48 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
- * string_nconcat - concatenates two strings
- * @s1: 1st string
+ * string_nconcat - concatenates strings based on limit n
+ * @s1: string
  * @s2: 2nd string
- * @n: range of chars from 2nd string
- * Return: pointer to string or NULL if not successful
+ * @n: limiter
+ * Return: pointer to concatenation
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char * ptr;
-	unsigned int length = n;
-	unsigned int count = 0;
-	unsigned int count2 = 0;
-	unsigned int count3 = 0;
-	unsigned int length2;
-	unsigned int counter;
-	unsigned int counter2;
+	char *result;
+	unsigned int s1_len = 0;
+	unsigned int s2_len = 0;
+	unsigned int i = 0;
+	unsigned int j = 0;
 
-	while (s1[count] != '\0')
+	if (s1 == NULL)
+		s1 = "";
+
+	while (s1[i] != '\0')
 	{
-		length++;
-		count++;
+		s1_len++;
+		i++;
 	}
 	if (s2 == NULL)
 		s2 = "";
-	while (s2[count2] != '\0')
-		count2++;
-	ptr = (char *) malloc(sizeof(char) * length);
+	while (s2[j] != '\0')
+	{
+		s2_len++;
+		j++;
+	}
+	if (n >= s2_len)
+		n = s2_len;
+	result = malloc(s1_len + n + 1);
 
-	if (ptr == NULL)
-		return (NULL);
-	for (counter = 0; counter < count; counter++)
-	{
-		ptr[counter] = s1[counter];
-	}
-	if ((count2 + 1) < n)
-		length2 = (count2 + 1);
-	else
-		length2 = n;
-	for (counter2 = counter; counter2 < (length2 + counter); counter2++)
-	{
-		ptr[counter2] = s2[count3];
-		count3++;
-	}
-	ptr[counter2] = '\0';
-	return (ptr);
+	if (result == NULL)
+		return NULL;
+	for (i = 0; i < s1_len; i++)
+		result[i] = s1[i];
+	for (j = 0; j < n; j++)
+		result[i+j] = s2[j];
+	result[i+j] = '\0';
+
+	return (result);
 }
