@@ -15,10 +15,10 @@ int main(int argc, char *argv[])
 	int b;
 	char *c;
 
-	if ((argv[2][1] != '\0') || (argc != 4))
+	if (argc != 4)
 	{
 		printf("Error\n");
-		exit(99);
+		exit(98);
 	}
 
 	a = atoi(argv[1]);
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-	if ((*c == '+') || (*c == '-') || (*c == '/') || (*c == '%') || (*c == '*'))
+	if ((argv[2][1] == '\0') || (*c == '+') || (*c == '-') || (*c == '/') || (*c == '%') || (*c == '*'))
 		printf("%d\n", (*get_op_func(argv[2]))(a, b));
 	else
 	{
