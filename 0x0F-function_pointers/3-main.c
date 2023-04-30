@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 	int a;
 	int b;
 	char *c;
+	char *d;
 
 	if (argc != 4)
 	{
@@ -24,6 +25,7 @@ int main(int argc, char *argv[])
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
 	c = argv[2];
+	d = argv[2][1];
 
 	if ((b == 0) && ((*c == '/') || (*c == '%')))
 	{
@@ -31,7 +33,7 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-	if ((argv[2][1] == '\0') || (*c == '+') || (*c == '-') || (*c == '/') || (*c == '%') || (*c == '*'))
+	if ((d == '\0') && ((*c == '+') || (*c == '-') || (*c == '/') || (*c == '%') || (*c == '*')))
 		printf("%d\n", (*get_op_func(argv[2]))(a, b));
 	else
 	{
