@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_bina - prints binary rep of input
+ * print_binary - prints binary rep of input
  * @n: input #
  */
 
