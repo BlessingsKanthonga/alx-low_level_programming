@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+void set_string(char **s, char *to);
 int _putchar(char);
 char *_memset(char *, char, unsigned int);
 char *_memcpy(char *, char *, unsigned int);
