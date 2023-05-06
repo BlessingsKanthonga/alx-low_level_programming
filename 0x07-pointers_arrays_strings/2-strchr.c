@@ -20,16 +20,11 @@ char *_strchr(char *s, char c)
 			d = &s[count];
 			break;
 		}
-		else if (s[count] != c)
+		else if ((s[count] != c) && (s[count] == '\0'))
 		{
-			d = NULL;
-			count++;
+			return (NULL);
 		}
-		else if (s[count] == '\0')
-		{
-			d = &s[count];
-			break;
-		}
+		count++;
 	}
 	return (d);
 }
