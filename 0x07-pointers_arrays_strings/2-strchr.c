@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "main.h"
 
 /**
@@ -21,9 +22,11 @@ char *_strchr(char *s, char c)
 		}
 		else if (s[count] != c)
 		{
-			d = "NULL";
+			d = NULL;
 			count++;
 		}
 	}
+	if (s[count] == '\0')
+		d = '\0';
 	return (d);
 }
