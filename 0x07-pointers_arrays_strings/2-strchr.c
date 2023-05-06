@@ -24,6 +24,8 @@ char *_strchr(char *s, char c)
 		{
 			d = NULL;
 			count++;
+			
+			return (d);
 		}
 	}
 	if (s[count] == '\0')
