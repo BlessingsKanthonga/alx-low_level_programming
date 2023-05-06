@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
- * _strcat - concatenates two strings
+ * _strncat - concatenates two strings
  * char \*: 1st input type
  * char \*: 2nd input type
  * @dest: first input sub
  * @src: 2nd input sub
+ * @n: limiter
  * Return: char variable
  */
 
