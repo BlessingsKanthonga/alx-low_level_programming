@@ -27,6 +27,6 @@ char *_strchr(char *s, char c)
 		}
 	}
 	if (s[count] == '\0')
-		d = s[count];
+		d = &s[count];
 	return (d);
 }
