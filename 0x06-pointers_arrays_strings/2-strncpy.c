@@ -1,38 +1,24 @@
+#include <stddef.h>
 #include "main.h"
 
 /**
- * _strcat - concatenates two strings
- * char \*: 1st input type
- * char \*: 2nd input type
- * @dest: first input sub
- * @src: 2nd input sub
- * Return: char variable
+ * _strncpy - Copy a string up to n bytes.
+ * @dest: Destination string.
+ * @src: Source string.
+ * @n: Maximum number of bytes to copy.
+ *
+ * Return: Pointer to the destination string.
  */
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int count = 0;
-	char check = '1';
+	int i;
 
-	while (check != '\0')
-	{
-		if (src[count] != '\0')
-		{
-			while ((src[count] != '\0') && (count < n))
-			{
-				dest[count] = src[count];
-				count++;
-			}
-			check = '\0';
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
+	for (; i < n; i++)
+		dest[i] = '\0';
 
-			while (count < n)
-			{
-				dest[count] = src[count];
-				count++;
-			}
-		}
-		else
-			count++;
-	}
 	return (dest);
 }
+
