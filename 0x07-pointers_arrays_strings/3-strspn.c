@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "main.h"
 
 /**
@@ -9,32 +10,25 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int count = 0;
-	int count2;
-	int length = 0;
-	int check;
-	int done = 0;
+	unsigned int prefix_len = 0;
+	char *p_accept;
 
-	while (done != 1)
+	while (*s != '\0')
 	{
-		count2 = 0;
-		check = 0;
+		p_accept = accept;
 
-		while (check != 1)
+		while (*p_accept != '\0')
 		{
-			if (s[count] == accept[count2])
+			if (*s == *p_accept)
 			{
-				length++;
+				prefix_len++;
 				break;
 			}
-			else if ((s[count] != accept[count2]) && (accept[count2] == '\0'))
-			{
-				check = 1;
-				done = 1;
-			}
-			count2++;
+			p_accept++;
 		}
-		count++;
+		if (*p_accept == '\0')
+			break;
+		s++;
 	}
-	return (length);
+	return (prefix_len);
 }
