@@ -13,7 +13,7 @@ char *_strchr(char *s, char c)
 	int count = 0;
 	char *d;
 
-	while (s[count] != '\0')
+	while (1)
 	{
 		if (s[count] == c)
 		{
@@ -24,11 +24,12 @@ char *_strchr(char *s, char c)
 		{
 			d = NULL;
 			count++;
-			
-			return (d);
+		}
+		else if (s[count] == '\0')
+		{
+			d = &s[count];
+			break;
 		}
 	}
-	if (s[count] == '\0')
-		d = &s[count];
 	return (d);
 }
